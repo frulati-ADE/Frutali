@@ -12,11 +12,12 @@
 <body>
 <header class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand"><img src="assets/logo1.png" alt="Logo FRULATI"><span>FRU<em>LATI</em></span></a>
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="Logo FRULATI"><span>FRU<em>LATI</em></span></a>
     <nav class="links" id="navLinks">
       <a href="index.html">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
       <a href="producto.html" class="active">Producto</a>
+      <a href="producto.html#nutricion">Nutrición</a>
       <a href="producto.html#sabores">Sabores</a>
       <a href="contacto.html">Contacto</a>
     </nav>
@@ -89,7 +90,27 @@
   </div>
 </section>
 
-<section class="alt reveal">
+<section id="nutricion" class="alt reveal">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">Información nutricional</span>
+      <h2>Transparencia en cada bombón</h2>
+      <p>La etiqueta real de cada sabor, con su información nutricional completa.</p>
+    </div>
+
+    <div class="nutri-toggle">
+      <button class="nutri-tab active" data-flavor="fresa">🍓 Fresa</button>
+      <button class="nutri-tab" data-flavor="uva">🍇 Uva verde</button>
+    </div>
+
+    <div class="nutri-label-frame">
+      <img id="nutriLabelImg" src="assets/etiqueta-fresa.jpg" alt="Etiqueta nutricional ChocoFruit sabor fresa">
+    </div>
+    <p class="galeria-note" style="text-align:center;max-width:520px;margin:18px auto 0;">Mantener congelado a -18 °C · Descongelar 15 minutos antes de consumir.</p>
+  </div>
+</section>
+
+<section class="reveal">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Por qué FRULATI</span>
@@ -120,7 +141,7 @@
   </div>
 </section>
 
-<section id="sabores" class="reveal">
+<section id="sabores" class="alt reveal">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow" style="justify-content:center;">Sabores</span>
@@ -164,7 +185,7 @@
   </div>
 </section>
 
-<section id="galeria" class="alt reveal">
+<section id="galeria" class="reveal">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow" style="justify-content:center;">Galería</span>

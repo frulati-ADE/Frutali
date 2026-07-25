@@ -17,6 +17,28 @@
   });
   document.querySelectorAll('.layer').forEach(l => l.style.transition = 'opacity .25s ease');
 
+  // Nutrition flavor toggle (fresa / uva) — swaps the real label image
+  const nutriTabs = document.querySelectorAll('.nutri-tab');
+  const nutriLabelImg = document.getElementById('nutriLabelImg');
+  const nutriImages = {
+    fresa: { src: 'assets/etiqueta-fresa.jpg', alt: 'Etiqueta nutricional ChocoFruit sabor fresa' },
+    uva:   { src: 'assets/etiqueta-uva.jpg',   alt: 'Etiqueta nutricional ChocoFruit sabor uva verde' }
+  };
+  nutriTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      nutriTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const data = nutriImages[tab.dataset.flavor];
+      if (nutriLabelImg && data) {
+        nutriLabelImg.style.animation = 'none';
+        nutriLabelImg.offsetHeight; /* restart animation */
+        nutriLabelImg.style.animation = '';
+        nutriLabelImg.src = data.src;
+        nutriLabelImg.alt = data.alt;
+      }
+    });
+  });
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
